@@ -1,7 +1,7 @@
 import React from 'react';
-import TodoList from './TodoList';
-import TodoInput from './TodoInput';
-import TodoApi from './TodoApi';
+import TodoList from './components/TodoList';
+import TodoInput from './components/TodoInput';
+import TodoApi from './services/TodoApi';
 
 class App extends React.Component {
   constructor(props) {
