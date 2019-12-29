@@ -19,19 +19,19 @@ class App extends React.Component {
 
   handleSubmit = input => {
     const newTodo = {
-      title: input,
-      content: input,
+      text: input,
     };
-    const api = new TodoApi();
-    api.addListItem(newTodo);
 
-    this.setState(state => {
-      return {list: [...state.list, newTodo], input: ''};
+    const api = new TodoApi();
+    api.addListItem(newTodo).then(todo => {
+      this.setState(state => {
+        return {list: [...state.list, todo], input: ''};
+      });
     });
   };
 
   handleDelete = id => {
-    const newList = this.state.list.filter((i) => (i.id !== id));
+    const newList = this.state.list.filter(i => i.id !== id);
     this.setState({list: newList});
 
     const api = new TodoApi();

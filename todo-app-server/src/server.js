@@ -6,8 +6,8 @@
 
   const _db = {
     todoList: [
-      {id: 1, title: 'hello', content: 'lorem ipsum'},
-      {id: 2, title: 'goodbye', content: 'dolor sit amet'},
+      {id: 1, text: 'lorem ipsum'},
+      {id: 2, text: 'dolor sit amet'},
     ],
   };
 
@@ -35,17 +35,15 @@
         : 1;
     const newTodo = {
       id: newId,
-      title: req.body.title,
-      content: req.body.content,
+      text: req.body.text,
     };
     _db.todoList.push(newTodo);
     console.log(_db.todoList);
 
-    res.json({});
+    res.json(newTodo);
   });
 
   app.post('/todo/remove/:id', (req, res) => {
-    console.log(req.params);
     console.log(`removing ${req.params.id}`);
     _db.todoList = _db.todoList.filter(i => i.id != req.params.id);
 
