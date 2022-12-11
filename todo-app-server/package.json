@@ -8,7 +8,7 @@
   "author": "cjariebs",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "mocha": "^6.2.2"
